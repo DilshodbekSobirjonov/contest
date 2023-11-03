@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+:root {
+	--main-bg: rgba(11,14,19, 1.0);
+	--card-bg: rgba(17,20,24, 1.0);
+	--text-color: rgba(155,168,193, 1.0);
+	--nav-bg: rgba(255, 255, 255, .05);
+	--active-color: rgba(235,228,255, 1.0);
+	--content-blur: blur(40px);
+}
+
+body {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.container {
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: var(--main-bg);
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+nav {
+	width: 98vw;
+	height: 100px;
+	border-radius: 20px;
+	background: var(--nav-bg);
+	backdrop-filter: var(--content-blur);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px;
+	overflow: hidden;
+}
+
+nav > input {
+	width: 100%;
+	height: 100%;
+	padding-left: 30px;
+	background: transparent;
+	border: none;
+	font-size: 40px;
+	color: #fff;
+}
+
+#section {
+	width: 100vw;
+	min-height: 1vh;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.box {
+	width: 350px;
+	height: 200px;
+	border: 1px solid #fff;
+	border-radius: 20px;
+	background: var(--nav-bg);
+	overflow: hidden;
+	margin: 20px;
+	perspective: 200px;
+	position: relative;
+	transition: all .5s;
+	cursor: pointer;
+}
+
+.box-main {
+	width: 350px;
+	height: 200px;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	background: var(--text-color);
+}
+
+.box-front {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 9;
+}
+
+.box-main, .box-front {
+	transition: all .2s;
+}
+
+.box-front {
+	width: 350px;
+	height: 200px;
+	padding: 10px;
+	background: #000;
+	color: #fff;
+	transform: rotateY(-180deg);
+}
+
+.box-active {
+	transform: rotateY(180deg);
+}
+
+.box-main-active {
+	z-index: 0;
+}
+
+.box-front-active {
+	z-index: 10;
+}
+
+.box-length,
+.box-percent {
+	flex: 50%;
+	height: 40%;
+	font-size: 30px;
+	color: #fff;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding: 20px;
+}
+
+.box-percent {
+	justify-content: flex-end;
+}
+
+.quiz-name {
+	flex: 100%;
+	height: 60%;
+	font-size: 50px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+}
